@@ -15,12 +15,12 @@ const Recipe1 = ({ meal }) => {
   }
 
   return (
-    <div className="bg-blue-100 border border-gray-300 p-6 rounded-lg shadow-lg w-full mx-auto mb-4">
-      <h2 className="text-4xl m-1 border-b-2 border-blue-600 underline text-black text-center">{meal.strMeal}</h2>
+    <div className="bg-blue-100 border border-grey-300 p-6 rounded-lg shadow-lg w-full mx-auto mb-4">
+      <h2 className="text-4xl m-1 border-b-2 b underline text-black text-center">{meal.strMeal}</h2>
       
       {/* Ingredients Section */}
       <div>
-        <h3 className="text-center text-3xl text-blue-800 mt-4">Ingredients:</h3>
+        <h3 className="text-center text-3xl text-red-300 mt-4 underline text-black">Ingredients:</h3>
         <ul className="list-inside text-center text-lg text-gray-700">
           {ingredients.map((item, index) => (
             <li key={index} className="my-1">{item.measure} {item.ingredient}</li>
@@ -71,7 +71,6 @@ function page2() {
       handleIngredientSelect(storedIngredient);
     }
   }, []);
-
   return (
     <div className="min-h-screen bg-red-300 flex flex-col items-center py-8">
       <h1 className="text-5xl font-bold mb-6">Meals with {selectedIngredient}</h1>
