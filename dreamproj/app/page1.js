@@ -4,7 +4,7 @@ import React from 'react'
 
 const Page1 = () => {
   return (
-    <div className="bg-red-300 h-screen m-0 flex flex-col justify-center items-center">
+    <div className=" h-screen m-0 flex flex-col justify-center items-center">
       <h1 className='text-4xl font-bold mb-4'>
         Meal Fetcher
       </h1>
