@@ -57,7 +57,11 @@ export default function ComboboxDemo() {
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
+<<<<<<< HEAD
             : "Select ingredient..."}
+=======
+            : "Select framework..."}
+>>>>>>> e39c158 (Added drop down menu)
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
