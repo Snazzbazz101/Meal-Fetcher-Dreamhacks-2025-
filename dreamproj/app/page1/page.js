@@ -5,7 +5,7 @@ import React from 'react'
 
 import Link from 'next/link'
 
-const Page1 = () => {
+function Page1 (){
   return (
     <div className=" h-screen m-0 flex flex-col justify-center items-center">
       <h1 className='text-4xl font-bold mb-4'>
