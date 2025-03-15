@@ -2,15 +2,20 @@ import { Button } from '@/components/ui/button'
 import ComboboxDemo from '@/dropmenu'
 import React from 'react'
 
-const page1 = () => {
-return (
-    <div style={{ backgroundColor: 'lightyellow', height: '100vh', margin: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+const Page1 = () => {
+  return (
+    <div className="bg-red-300 h-screen m-0 flex flex-col justify-center items-center">
+      <h1 className='text-4xl font-bold mb-4'>
+        Meal Fetcher
+      </h1>
+      <div className="flex flex-col justify-center items-center"> 
         <ComboboxDemo />
-        <Button className='bg-green-500'>
-            Enter!
+        <Button className="bg-green-500 mt-4">
+          Enter!
         </Button>
+      </div>
     </div>
-)
+  )
 }
 
-export default page1
+export default Page1
