@@ -1,4 +1,3 @@
-import Page2 from "@/page2";
 import Image from "next/image";
 import page1 from "./page1";
 
