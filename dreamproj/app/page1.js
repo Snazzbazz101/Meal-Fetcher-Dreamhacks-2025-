@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Button } from '@/components/ui/button'
 import ComboboxDemo from '@/dropmenu'
 import React from 'react'
@@ -21,13 +22,19 @@ const Page1 = () => {
 
 export default Page1
 =======
+=======
+import { Button } from '@/components/ui/button'
+>>>>>>> a74b434 (enter button)
 import ComboboxDemo from '@/dropmenu'
 import React from 'react'
 
 const page1 = () => {
 return (
-    <div style={{ backgroundColor: 'lightyellow', height: '100vh', margin: 0 }}>
+    <div style={{ backgroundColor: 'lightyellow', height: '100vh', margin: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <ComboboxDemo />
+        <Button className='bg-green-500'>
+            Enter!
+        </Button>
     </div>
 )
 }
