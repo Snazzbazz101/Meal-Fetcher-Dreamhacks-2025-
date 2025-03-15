@@ -21,6 +21,7 @@ const Recipe1 = ({ ingredients }) => {
     </div>
   );
 };
+
 const Recipe2 = ({ ingredients }) => {
   return (
     <div className="bg-blue-100 border border-gray-300 p-6 rounded-lg shadow-lg w-fit mx-auto">
@@ -108,10 +109,10 @@ const Page2 = () => {
   return (
     <div className="min-h-screen bg-red-300 flex items-center justify-center">
       <Recipe1 ingredients={ingredients} /> 
-      {/* <Recipe2 ingredients={ingredients} />
+      <Recipe2 ingredients={ingredients} />
       <Recipe3 ingredients={ingredients} />
       <Recipe4 ingredients={ingredients} />
-      <Recipe5 ingredients={ingredients} /> */}
+      <Recipe5 ingredients={ingredients} />
     </div>
     
   );
