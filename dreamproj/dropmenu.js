@@ -40,6 +40,14 @@ export default function ComboboxDemo() {
     value: ingredient.strIngredient,
   }))
 
+  // Function to handle selection and store value in localStorage
+  const handleSelect = (currentValue) => {
+    const newValue = currentValue === value ? "" : currentValue
+    setValue(newValue)
+    setOpen(false)
+    localStorage.setItem("selectedIngredient", newValue)
+  }
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -65,10 +73,7 @@ export default function ComboboxDemo() {
                 <CommandItem
                   key={framework.value}
                   value={framework.value}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
-                    setOpen(false)
-                  }}
+                  onSelect={handleSelect}
                 >
                   <Check
                     className={cn(
