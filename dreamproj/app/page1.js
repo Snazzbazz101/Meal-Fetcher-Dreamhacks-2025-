@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button'
 import ComboboxDemo from '@/dropmenu'
 import React from 'react'
 
+import Link from 'next/link'
+
 const Page1 = () => {
   return (
     <div className=" h-screen m-0 flex flex-col justify-center items-center">
@@ -11,9 +13,11 @@ const Page1 = () => {
       </h1>
       <div className="flex flex-col justify-center items-center"> 
         <ComboboxDemo />
-        <Button className="bg-green-500 mt-4">
-          Enter!
-        </Button>
+        <Link href="/page2">
+      <Button className="bg-green-500 mt-4">
+        Enter!
+      </Button>
+      </Link>
       </div>
     </div>
   )
