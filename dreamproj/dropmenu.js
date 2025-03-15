@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
+import { useState, useEffect } from "react"
 import { Check, ChevronsUpDown } from "lucide-react"
-
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -19,32 +19,26 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-const frameworks = [
-  {
-    value: "next.js",
-    label: "Next.js",
-  },
-  {
-    value: "sveltekit",
-    label: "SvelteKit",
-  },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
-]
-
 export default function ComboboxDemo() {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [open, setOpen] = useState(false)
+  const [value, setValue] = useState("")
+  const [ingredients, setIngredients] = useState([])
+
+  // Fetch ingredients locally in this component
+  useEffect(() => {
+    async function fetchIngredients() {
+      const res = await fetch("https://www.themealdb.com/api/json/v1/1/list.php?i=list")
+      const data = await res.json()
+      setIngredients(data.meals)
+    }
+    fetchIngredients()
+  }, [])
+
+  // Map ingredients to objects used in autocomplete
+  const frameworks = ingredients.map((ingredient) => ({
+    label: ingredient.strIngredient,
+    value: ingredient.strIngredient,
+  }))
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -71,9 +65,9 @@ export default function ComboboxDemo() {
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search framework..." />
+          <CommandInput placeholder="Search ingredient..." />
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No ingredient found.</CommandEmpty>
             <CommandGroup>
               {frameworks.map((framework) => (
                 <CommandItem
